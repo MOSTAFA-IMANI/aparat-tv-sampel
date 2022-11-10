@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.leanback.app.BackgroundManager
 import androidx.leanback.app.BrowseSupportFragment
+import androidx.leanback.app.RowsSupportFragment
 import androidx.leanback.widget.*
 import androidx.lifecycle.asLiveData
 import androidx.navigation.fragment.findNavController
@@ -19,7 +20,7 @@ import com.skilltory.app.aparattv.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class BrowsFragment : BrowseSupportFragment() {
+class BrowsFragment : RowsSupportFragment() {
 
     private val viewModel: BrowsViewModel by viewModels()
     private val backgroundManager by lazy {
@@ -30,7 +31,7 @@ class BrowsFragment : BrowseSupportFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        title = getString(R.string.app_name)
+//        title = getString(R.string.app_name)
 
     }
 
