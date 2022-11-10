@@ -9,5 +9,13 @@
         android:id="@+id/splashFragment"
         android:name="com.skilltory.app.aparattv.ui.feature.splash.SplashFragment"
         android:label="fragment_splash"
-        tools:layout="@layout/fragment_splash" />
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_browsFragment"
+            app:destination="@id/browsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/browsFragment"
+        android:name="com.skilltory.app.aparattv.ui.feature.browse.BrowsFragment"
+        android:label="BrowsFragment" />
 </navigation>

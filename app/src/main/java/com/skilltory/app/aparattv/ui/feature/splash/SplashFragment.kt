@@ -7,9 +7,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.asLiveData
+
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
+import com.skilltory.app.aparattv.R
 import com.skilltory.app.aparattv.databinding.FragmentSplashBinding
+import com.skilltory.app.aparattv.utils.extension.canNavigate
+import com.skilltory.app.aparattv.utils.extension.navigate
+import com.skilltory.app.aparattv.utils.extension.navigateSafe
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -35,7 +40,13 @@ class SplashFragment : Fragment() {
     }
 
     private fun goToHome() {
-//        TODO("Not yet implemented")
+        val action = SplashFragmentDirections.actionSplashFragmentToBrowsFragment()
+        navigate(
+            action,
+            NavOptions.Builder()
+                .setPopUpTo(R.id.splashFragment, true)
+                .build()
+        )
     }
 
 
