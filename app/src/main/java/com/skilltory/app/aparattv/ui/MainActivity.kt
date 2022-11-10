@@ -5,9 +5,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.FragmentActivity
 import com.skilltory.app.aparattv.R
+import com.skilltory.app.aparattv.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 import io.github.inflationx.viewpump.ViewPumpContextWrapper
 
+@AndroidEntryPoint
 class MainActivity : FragmentActivity() {
+    private lateinit var binding: ActivityMainBinding
 
     override fun attachBaseContext(newBase: Context) {
         super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase))
@@ -15,6 +19,7 @@ class MainActivity : FragmentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
     }
 }
