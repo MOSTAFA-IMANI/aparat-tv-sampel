@@ -1,5 +1,9 @@
 package com.skilltory.app.aparattv.domain.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Video(
     var categoryId: Long = -1,
     val title: String?=null,
@@ -11,4 +15,4 @@ data class Video(
     val thumbUrl: String?=null,
     val sendingDate: Int?=null,
 
-)
+):Parcelable

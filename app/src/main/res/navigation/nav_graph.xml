@@ -17,5 +17,17 @@
     <fragment
         android:id="@+id/browsFragment"
         android:name="com.skilltory.app.aparattv.ui.feature.browse.BrowsFragment"
-        android:label="BrowsFragment" />
+        android:label="BrowsFragment" >
+        <action
+            android:id="@+id/action_browsFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.skilltory.app.aparattv.ui.feature.detail.DetailFragment"
+        android:label="DetailFragment" >
+        <argument
+            android:name="video"
+            app:argType="com.skilltory.app.aparattv.domain.model.Video" />
+    </fragment>
 </navigation>

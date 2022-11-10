@@ -19,7 +19,7 @@ import com.skilltory.app.aparattv.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class BrowsFragment:BrowseSupportFragment() {
+class BrowsFragment : BrowseSupportFragment() {
 
     private val viewModel: BrowsViewModel by viewModels()
     private val backgroundManager by lazy {
@@ -30,22 +30,22 @@ class BrowsFragment:BrowseSupportFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        title = getString(R.string.app_name)
 
-//        title = getString(R.string.app_name)
-
-        if (savedInstanceState == null) {
-//            prepareEntranceTransition()
-        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         observeData()
+        setOnItemViewClickedListener { _, item, _, _ ->
+            item as Video
+            viewModel.onMovieClicked(item)
+        }
+
+        setDynamicBackground()
 
     }
-
-
 
 
     override fun getSelectedPosition(): Int {
@@ -72,8 +72,12 @@ class BrowsFragment:BrowseSupportFragment() {
                 }
             }
         }
+        viewModel.navigateToDetail.asLiveData().observe(viewLifecycleOwner) {
+            findNavController().navigate(
+                BrowsFragmentDirections.actionBrowsFragmentToDetailFragment(it.video)
+            )
+        }
     }
-
 
 
     private fun displayData(categories: List<Category>) {
@@ -89,6 +93,33 @@ class BrowsFragment:BrowseSupportFragment() {
 
 
         this.adapter = adapter
-
+        // Scrolling to row/column
+        viewModel.scrollPos?.let { (catPos, moviePos) ->
+            this.setSelectedPosition(
+                catPos,
+                true,
+                ListRowPresenter.SelectItemViewHolderTask(moviePos)
+            )
+            viewModel.resetScrollPos()
+        }
     }
+
+
+    private fun setDynamicBackground() {
+
+        setOnItemViewSelectedListener { itemViewHolder, item, rowViewHolder, row ->
+            Log.i("Selecting",
+                "setDynamicBackground: ***********${this.selectedPosition}**************")
+
+            if (itemViewHolder?.view != null) {
+                val bitmapDrawable =
+                    (itemViewHolder.view as ImageCardView).mainImageView.drawable as? BitmapDrawable
+                if (bitmapDrawable != null) {
+                    backgroundManager.drawable = bitmapDrawable
+                }
+            }
+        }
+    }
+
+
 }
