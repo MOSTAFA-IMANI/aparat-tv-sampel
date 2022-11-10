@@ -1,6 +1,8 @@
 package com.skilltory.app.aparattv.repository
 
+import com.skilltory.app.aparattv.domain.model.HomeUiModel
+
 interface HomeVideoRepository {
 
-    suspend fun getAparatVideoCatogrized()
+    suspend fun getAparatVideoCategorized(): HomeUiModel
 }

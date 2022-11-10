@@ -1,6 +1,6 @@
 package com.skilltory.app.aparattv.di
 
-import com.skilltory.app.aparattv.network.ApiServiceInterface
+import com.skilltory.app.aparattv.network.AparatApiService
 import com.skilltory.app.aparattv.utils.Constants
 import dagger.Module
 import dagger.Provides
@@ -18,8 +18,8 @@ import javax.inject.Singleton
 object NetworkModule {
 
     @Provides
-    fun provideApiInterface(retrofit: Retrofit): ApiServiceInterface {
-        return retrofit.create(ApiServiceInterface::class.java)
+    fun provideApiInterface(retrofit: Retrofit): AparatApiService {
+        return retrofit.create(AparatApiService::class.java)
     }
 
     @Provides
