@@ -1,4 +1,4 @@
-package com.skilltory.app.aparattv.ui
+package com.skilltory.app.aparattv.utils
 
 class Constants {
     companion object {

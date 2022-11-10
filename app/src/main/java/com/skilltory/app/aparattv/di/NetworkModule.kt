@@ -1,8 +1,7 @@
 package com.skilltory.app.aparattv.di
 
-import com.google.gson.GsonBuilder
 import com.skilltory.app.aparattv.network.ApiServiceInterface
-import com.skilltory.app.aparattv.ui.Constants
+import com.skilltory.app.aparattv.utils.Constants
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
