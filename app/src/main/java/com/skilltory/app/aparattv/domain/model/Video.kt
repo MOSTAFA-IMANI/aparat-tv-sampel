@@ -7,7 +7,7 @@ data class Video(
     val sender: List<String>?=null,
     val tags: List<String>?=null,
     val imageUrl: String?=null,
-    val LikeCount: Double?=null,
+    val likeCount: Double?=null,
     val thumbUrl: String?=null,
     val sendingDate: Int?=null,
 
