@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="TextStyle" parent="android:Widget.TextView">
-        <item name="android:textColor">#f00</item>
-        <item name="android:shadowColor">#000</item>
+        <item name="android:textColor">#eee</item>
+        <item name="android:shadowColor">#333</item>
         <item name="android:shadowDy">4</item>
         <item name="android:shadowDx">4</item>
         <item name="android:shadowRadius">4</item>
@@ -92,7 +92,7 @@
     </style>
     <style name="Theme.LeanbackBaseCustom" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="playbackProgressPrimaryColor">@color/lb_playback_progress_color_no_theme</item>
-        <item name="playbackProgressSecondaryColor">@color/lb_playback_progress_secondary_color_no_theme</item>
+        <item name="playbackProgressSecondaryColor">#333</item>
         <item name="playbackControlsIconHighlightColor">@color/lb_playback_icon_highlight_no_theme</item>
         <item name="defaultBrandColor">@color/lb_default_brand_color</item>
         <item name="defaultBrandColorDark">@color/lb_default_brand_color_dark</item>
@@ -120,7 +120,12 @@
     <style name="TextAppearance.Leanback.Header.Custom" parent="TextAppearance.Leanback.Custom">
         <item name="android:textSize">@dimen/lb_browse_header_text_size</item>
         <item name="android:textAppearance">@style/TextStyle</item>
-        <item name="android:textColor">#099</item>
+        <item name="android:textColor">#eee</item>
+        <item name="android:shadowRadius">4</item>
+        <item name="android:shadowColor">#000</item>
+        <item name="android:shadowDy">4</item>
+        <item name="android:shadowDx">4</item>
+
     </style>
     <style name="Widget.Leanback.Row.Header.Description.Custom" parent="Widget.Leanback.Header">
         <item name="android:textAppearance">@style/TextAppearance.Leanback.Row.Header.Description</item>

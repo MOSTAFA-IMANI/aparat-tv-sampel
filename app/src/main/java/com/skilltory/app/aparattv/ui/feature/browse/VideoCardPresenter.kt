@@ -34,7 +34,7 @@ class VideoCardPresenter : Presenter() {
             val posterHeight = 200.toInt()
 
             mainImageView.load(
-                uri = video.imageUrl,
+                uri = video.thumbUrl,
                 builder = {
                     scale(Scale.FIT)
                     size(posterWidth, posterHeight)

@@ -1,6 +1,7 @@
 package com.skilltory.app.aparattv.ui.feature.browse
 
 import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -11,6 +12,10 @@ import androidx.leanback.app.RowsSupportFragment
 import androidx.leanback.widget.*
 import androidx.lifecycle.asLiveData
 import androidx.navigation.fragment.findNavController
+import coil.load
+import coil.loadAny
+import coil.request.ImageRequest
+import coil.size.Scale
 import com.skilltory.app.aparattv.domain.model.Category
 import com.skilltory.app.aparattv.domain.model.Video
 import com.skilltory.app.aparattv.ui.MainActivity
@@ -120,7 +125,7 @@ class BrowsFragment : RowsSupportFragment(), UICommunicationTasks {
                 val bitmapDrawable =
                     (itemViewHolder.view as ImageCardView).mainImageView.drawable as? BitmapDrawable
                 if (bitmapDrawable != null) {
-                    backgroundManager.drawable = bitmapDrawable
+                    backgroundManager.drawable =bitmapDrawable
                 }
             }
         }
