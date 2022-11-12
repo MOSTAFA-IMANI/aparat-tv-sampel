@@ -15,7 +15,7 @@ class AparatTVApplication: Application() {
                 .addInterceptor(
                     CalligraphyInterceptor(
                         CalligraphyConfig.Builder()
-                            .setDefaultFontPath("fonts/font_mj_persian.ttf")
+                            .setDefaultFontPath("fonts/font_custom.ttf")
                             .build()
                     )
                 )
