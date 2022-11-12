@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AparatTV</string>
+    <string name="network_unknown_error">لطفا اینترنت خود را چک نمایید</string>
+    <string name="retry">تلاش مجدد</string>
+</resources>

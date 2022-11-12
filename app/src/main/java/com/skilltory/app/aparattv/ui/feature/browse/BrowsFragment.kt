@@ -7,20 +7,19 @@ import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.leanback.app.BackgroundManager
-import androidx.leanback.app.BrowseSupportFragment
 import androidx.leanback.app.RowsSupportFragment
 import androidx.leanback.widget.*
 import androidx.lifecycle.asLiveData
 import androidx.navigation.fragment.findNavController
-import com.skilltory.app.aparattv.R
 import com.skilltory.app.aparattv.domain.model.Category
 import com.skilltory.app.aparattv.domain.model.Video
-import com.skilltory.app.aparattv.utils.Constants
+import com.skilltory.app.aparattv.ui.MainActivity
+import com.skilltory.app.aparattv.ui.base.UICommunicationTasks
 import com.skilltory.app.aparattv.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class BrowsFragment : RowsSupportFragment() {
+class BrowsFragment : RowsSupportFragment(), UICommunicationTasks {
 
     private val viewModel: BrowsViewModel by viewModels()
     private val backgroundManager by lazy {
@@ -43,7 +42,6 @@ class BrowsFragment : RowsSupportFragment() {
             item as Video
             viewModel.onMovieClicked(item)
         }
-
         setDynamicBackground()
 
     }
@@ -63,13 +61,19 @@ class BrowsFragment : RowsSupportFragment() {
                 is Resource.Idle -> {
                 }
                 is Resource.Loading -> {
+
+                    handleLoading(
+                        requireActivity() as MainActivity,
+                        resource.isLoading
+                    )
                 }
                 is Resource.Success -> {
                     displayData(resource.data.categoryList)
-//                    startEntranceTransition()
                 }
                 is Resource.Error -> {
-                    Toast.makeText(requireContext(), "ERROR", Toast.LENGTH_SHORT).show()
+                    handleError(
+                        requireActivity() as MainActivity,
+                        resource)
                 }
             }
         }

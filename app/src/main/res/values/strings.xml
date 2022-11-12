@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AparatTV</string>
+    <string name="network_unknown_error">network Error , check your Internet</string>
+    <string name="retry">retry</string>
 </resources>
