@@ -1,7 +1,7 @@
 
 <div align="center">
 
-  <img src="assets/logo.png" alt="logo" width="200" height="auto" />
+  <img src="app_icon_company.png" alt="logo" width="200" height="auto" />
   <h1>Aparat TV sample</h1>
   
   <p>
@@ -53,7 +53,7 @@
 ### :camera: Screenshots
 
 <div align="center"> 
-  <img src="sample/screenshots/main_screen_shot.png" alt="screenshot" />
+  <img src="screen_shot.png" alt="screenshot" />
 </div>
 
 
