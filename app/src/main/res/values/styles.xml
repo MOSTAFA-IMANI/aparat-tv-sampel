@@ -143,4 +143,7 @@
         <item name="android:textAppearance">@style/TextStyle</item>
 
     </style>
+    <style name="AppBarStyle">
+        <item name="background">@color/black</item>
+    </style>
 </resources>

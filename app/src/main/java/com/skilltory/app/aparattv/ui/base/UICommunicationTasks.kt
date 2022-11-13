@@ -28,4 +28,14 @@ interface UICommunicationTasks {
            //todo: can check error Message and do Some Exceptions when There is an Error
        }
     }
+    fun expandAppBar(activity: MainActivity){
+        activity.expandAppBar()
+    }
+    fun collapseAppBar(activity: MainActivity){
+        activity.collapseAppBar()
+    }
+    fun setAppBarTitleText(activity: MainActivity,title:String){
+        activity.setAppBarTitleText(title)
+    }
+
 }

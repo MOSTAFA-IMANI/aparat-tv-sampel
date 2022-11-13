@@ -36,6 +36,7 @@ class BrowsViewModel @Inject constructor(
     init {
         loadHomeVideos()
     }
+    private lateinit var successResult: Resource.Success<HomeUiModel>
 
     private fun loadHomeVideos() {
         viewModelScope.launch {
@@ -52,11 +53,16 @@ class BrowsViewModel @Inject constructor(
                     }
 
                     override fun handleSuccessResult(successResult: Resource.Success<HomeUiModel>) {
+                        this@BrowsViewModel.successResult = successResult
                         tryEmit(successResult)
                     }
 
-                    override fun handleError(errorBody: ErrorBody?, uiCommunication: UICommunication) {
-                        tryEmit(Resource.Error(errorBody=errorBody, uiCommunication = uiCommunication))
+                    override fun handleError(
+                        errorBody: ErrorBody?,
+                        uiCommunication: UICommunication,
+                    ) {
+                        tryEmit(Resource.Error(errorBody = errorBody,
+                            uiCommunication = uiCommunication))
                     }
                 }.getResult()
             }
@@ -66,13 +72,14 @@ class BrowsViewModel @Inject constructor(
 
     var scrollPos: Pair<Int, Int>? = null
     fun onMovieClicked(movie: Video) {
-        if (videoResponse.value is Resource.Success) {
-            val categories = (videoResponse.value as Resource.Success<HomeUiModel>).data.categoryList
+
+        if(this::successResult.isInitialized ){
+            val categories = successResult.data.categoryList
             val clickedCategory = categories.find { it.id == movie.categoryId }!!
 
             // Navigating to detail
             _navigateToDetail.tryEmit(
-                DetailFragmentArgs( movie)
+                DetailFragmentArgs(movie)
             )
 
             // Find category position and movie position
@@ -80,8 +87,9 @@ class BrowsViewModel @Inject constructor(
             val moviePos = clickedCategory.movies.indexOf(movie)
 
             scrollPos = Pair(catPos, moviePos)
-
         }
+
+
     }
 
     fun resetScrollPos() {
