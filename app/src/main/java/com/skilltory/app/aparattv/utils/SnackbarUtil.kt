@@ -6,6 +6,7 @@ import androidx.core.content.ContextCompat
 import com.google.android.material.behavior.SwipeDismissBehavior
 import com.google.android.material.snackbar.BaseTransientBottomBar
 import com.google.android.material.snackbar.Snackbar
+import com.skilltory.app.aparattv.R
 
 import com.skilltory.app.aparattv.ui.widghet.StickySnackbar
 import javax.inject.Inject
@@ -37,7 +38,7 @@ class SnackbarUtil @Inject constructor() {
                     setActionTextColor(
                         ContextCompat.getColor(
                             view.context,
-                            androidx.appcompat.R.color.button_material_light
+                            R.color.teal_200
                         )
                     )
                     if (action == null)
