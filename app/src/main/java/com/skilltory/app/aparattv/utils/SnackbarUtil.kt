@@ -37,7 +37,7 @@ class SnackbarUtil @Inject constructor() {
                     setActionTextColor(
                         ContextCompat.getColor(
                             view.context,
-                            androidx.appcompat.R.color.material_blue_grey_950
+                            androidx.appcompat.R.color.button_material_light
                         )
                     )
                     if (action == null)

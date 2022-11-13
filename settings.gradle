@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "AparatTV"
 include ':app'
+include ':app:sampels'

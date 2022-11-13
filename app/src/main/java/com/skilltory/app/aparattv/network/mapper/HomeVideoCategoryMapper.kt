@@ -6,6 +6,7 @@ import com.skilltory.app.aparattv.domain.model.Video
 import com.skilltory.app.aparattv.domain.util.DomainMapper
 import com.skilltory.app.aparattv.network.response.AparatHomeVideoResponse
 import com.skilltory.app.aparattv.utils.extension.toUniqueId
+import kotlin.random.Random
 
 class HomeVideoCategoryMapper : DomainMapper<AparatHomeVideoResponse, HomeUiModel> {
     override fun mapToDomainModel(model: AparatHomeVideoResponse): HomeUiModel {
@@ -14,10 +15,12 @@ class HomeVideoCategoryMapper : DomainMapper<AparatHomeVideoResponse, HomeUiMode
         val allVideoList = model.included
         metaDataOfCategoryList.forEach { aparatCategory ->
             val videoListOfThisCategory = ArrayList<Video>()
+            val categoryId = aparatCategory.id.toUniqueId()?: Random(5).nextLong()
             aparatCategory.relationships.video.data.forEach { vidoData ->
                 val currentVideo = allVideoList.find {
                     it.id == vidoData.id
                 }
+
                 videoListOfThisCategory.add(Video(
                     description = currentVideo?.attributes?.description,
                     tags = currentVideo?.attributes?.tags,
@@ -25,10 +28,10 @@ class HomeVideoCategoryMapper : DomainMapper<AparatHomeVideoResponse, HomeUiMode
                     title = currentVideo?.attributes?.title,
                     likeCount = currentVideo?.attributes?.like_cnt?.toDouble(),
                     thumbUrl = currentVideo?.attributes?.small_poster,
-                    categoryId = aparatCategory.id.toUniqueId()
+                    categoryId = categoryId
                 ))
             }
-            val currentCategory = Category(aparatCategory.id.toUniqueId(),
+            val currentCategory = Category(categoryId,
                 aparatCategory.attributes.title.text,
                 videoListOfThisCategory)
 
