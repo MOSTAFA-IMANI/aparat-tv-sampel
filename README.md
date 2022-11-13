@@ -95,28 +95,25 @@
 <!-- todos -->
 ### :compass: ToDo Roadmap
 
-for more information we can pass through below methods to have better app 
-I ignore them cuz of time and (Negative Score)
 
-  - Offline First
+- Offline First
   + using Room or other ORM to have caching system which can pereformed offline first Data from Repository
   
-  - Modular Programming
-   + refactoring codes and use Modular Programming to handle in larg scal 
-   + and also impelemt difrent UI and senario for both TV and Moblie app
+- Modular Programming
+  + refactoring codes and use Modular Programming to handle in larg scal 
+  + and also impelemt difrent UI and senario for both TV and Moblie app
    
-  - Migrate to MVI Artitecture
+- Migrate to MVI Artitecture
   + migrate from MVVM artitecture to MVI to solve uni directnal data flow and have more sutable for testing
   
 - Write More Unit Test
   + just implement some few unit test to show but it is more adviced to wrte more Unit test
   
 - Write Some Mid Test and UI Test
- + you can write some integration Tests and Ui Tests to reliable whole system
- 
- 
-  - Adding Jetpac Compose
-   + using jetpac Compose to have better and fluent data change fo mobile app instead of XML
+  + you can write some integration Tests and Ui Tests to reliable whole system
+  
+- Adding Jetpac Compose
+  + using jetpac Compose to have better and fluent data change fo mobile app instead of XML
    
 
 <!-- Acknowledgments -->
