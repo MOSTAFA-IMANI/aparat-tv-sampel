@@ -28,7 +28,7 @@
 ### :camera: Screenshots
 
 <div align="center"> 
-  <img src="sample/screenshots/screenshot2.png" alt="screenshot" />
+  <img src="sample/screenshots/screendhot2.png" alt="screenshot" />
 </div>
 
 
