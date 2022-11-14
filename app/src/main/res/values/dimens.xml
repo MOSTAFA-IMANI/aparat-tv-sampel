@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="poster_width">250</dimen>
-    <dimen name="poster_height">200</dimen>
+    <dimen name="title_icon_width">55dp</dimen>
+    <dimen name="title_icon_height">55dp</dimen>
+    <dimen name="poster_width">250dp</dimen>
+    <dimen name="poster_height">200dp</dimen>
 </resources>

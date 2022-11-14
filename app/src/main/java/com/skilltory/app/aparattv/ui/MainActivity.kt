@@ -52,7 +52,6 @@ class MainActivity : FragmentActivity(), UICommunicationImpl {
 
     private fun setAppBarVisibility(fragmentId: Int) {
         when (fragmentId) {
-            R.id.browsFragment,
             R.id.detailFragment,
             -> binding.appBar.visibility = View.VISIBLE
             else -> binding.appBar.visibility = View.GONE

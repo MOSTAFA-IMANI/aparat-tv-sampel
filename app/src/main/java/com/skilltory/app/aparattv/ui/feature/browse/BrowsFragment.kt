@@ -3,15 +3,18 @@ package com.skilltory.app.aparattv.ui.feature.browse
 import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import android.util.Log
+import android.view.Gravity
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
+import android.widget.FrameLayout
+import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
 import androidx.leanback.app.BackgroundManager
-import androidx.leanback.app.RowsSupportFragment
+import androidx.leanback.app.BrowseSupportFragment
 import androidx.leanback.widget.*
 import androidx.lifecycle.asLiveData
-import androidx.navigation.NavOptions
-import androidx.navigation.fragment.findNavController
 import com.skilltory.app.aparattv.R
 import com.skilltory.app.aparattv.domain.model.Category
 import com.skilltory.app.aparattv.domain.model.Video
@@ -21,8 +24,9 @@ import com.skilltory.app.aparattv.utils.Resource
 import com.skilltory.app.aparattv.utils.extension.navigate
 import dagger.hilt.android.AndroidEntryPoint
 
+
 @AndroidEntryPoint
-class BrowsFragment : RowsSupportFragment(), UICommunicationTasks {
+class BrowsFragment : BrowseSupportFragment(), UICommunicationTasks {
     companion object {
 
         private const val BACKGROUND_RESOURCE_ID = R.drawable.image_placeholder
@@ -34,9 +38,51 @@ class BrowsFragment : RowsSupportFragment(), UICommunicationTasks {
         }
     }
 
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?,
+    ): View? {
+        return super.onCreateView(inflater, container, savedInstanceState)
+    }
+
+    /**
+     * we can use [setBadgeDrawable]
+     * to set an icon without customize whole layout
+     * but it just add a single  image view
+     * by customize whole layout of title header  we have more options
+     * to add new views or modify the existing views like [setTitle]
+     * */
+
+    override fun onInflateTitleView(
+        inflater: LayoutInflater?,
+        parent: ViewGroup?,
+        savedInstanceState: Bundle?,
+    ): View {
+        return inflater!!.inflate( R.layout.browse_title_custom_header_layout, parent, false).also {
+            val textView = it.findViewById<TextView>(androidx.leanback.R.id.title_text)
+            val newParams = FrameLayout.LayoutParams(
+                FrameLayout  .LayoutParams.WRAP_CONTENT,
+                FrameLayout .LayoutParams.WRAP_CONTENT
+            ).apply {
+                gravity = Gravity.CENTER
+            }
+            textView.apply {
+                layoutParams = newParams
+                background = null
+            }
+            it.background = ContextCompat.getDrawable(requireContext(),R.drawable.title_background)
+        }
+
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        headersState = HEADERS_DISABLED;
+        title = getString(R.string.brows_title)
+
     }
+
 
     override fun onResume() {
         super.onResume()

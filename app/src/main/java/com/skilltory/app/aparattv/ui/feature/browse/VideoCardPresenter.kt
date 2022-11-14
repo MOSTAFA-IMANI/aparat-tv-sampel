@@ -19,8 +19,8 @@ class VideoCardPresenter : Presenter() {
             isFocusableInTouchMode = true
             cardType = BaseCardView.CARD_TYPE_MAIN_ONLY
             with(mainImageView) {
-                val posterWidth = 250.toInt()
-                val posterHeight = 200.toInt()
+                val posterWidth = parent.resources.getDimension(R.dimen.poster_width).toInt()
+                val posterHeight = parent.resources.getDimension(R.dimen.poster_height).toInt()
                 layoutParams = BaseCardView.LayoutParams(posterWidth, posterHeight)
             }
         }
@@ -30,8 +30,8 @@ class VideoCardPresenter : Presenter() {
     override fun onBindViewHolder(viewHolder: ViewHolder, item: Any) {
         val video = item as Video
         with(viewHolder.view as ImageCardView) {
-            val posterWidth = 250.toInt()
-            val posterHeight = 200.toInt()
+            val posterWidth =  resources.getDimension(R.dimen.poster_width).toInt()
+            val posterHeight =  resources.getDimension(R.dimen.poster_height).toInt()
 
             mainImageView.load(
                 uri = video.thumbUrl,
