@@ -9,37 +9,12 @@
   </p>
   
   
-<!-- Badges -->
-<p>
-  <a href="https://github.com/Louis3797/awesome-readme-template/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/Louis3797/awesome-readme-template" alt="contributors" />
-  </a>
-  <a href="">
-    <img src="https://img.shields.io/github/last-commit/Louis3797/awesome-readme-template" alt="last update" />
-  </a>
-  <a href="https://github.com/Louis3797/awesome-readme-template/network/members">
-    <img src="https://img.shields.io/github/forks/Louis3797/awesome-readme-template" alt="forks" />
-  </a>
-  <a href="https://github.com/Louis3797/awesome-readme-template/stargazers">
-    <img src="https://img.shields.io/github/stars/Louis3797/awesome-readme-template" alt="stars" />
-  </a>
-  <a href="https://github.com/Louis3797/awesome-readme-template/issues/">
-    <img src="https://img.shields.io/github/issues/Louis3797/awesome-readme-template" alt="open issues" />
-  </a>
-  <a href="https://github.com/Louis3797/awesome-readme-template/blob/master/LICENSE">
-    <img src="https://img.shields.io/github/license/Louis3797/awesome-readme-template.svg" alt="license" />
-  </a>
-</p>
+
    
 <h4>
-    <a href="https://github.com/Louis3797/awesome-readme-template/">View Demo</a>
+    <a href="sample/apks/app-debug-sample.apk">View Demo</a>
   <span> · </span>
-    <a href="https://github.com/Louis3797/awesome-readme-template">Documentation</a>
-  <span> · </span>
-    <a href="https://github.com/Louis3797/awesome-readme-template/issues/">Report Bug</a>
-  <span> · </span>
-    <a href="https://github.com/Louis3797/awesome-readme-template/issues/">Request Feature</a>
-  </h4>
+     </h4>
 </div>
 
 <br />
@@ -96,28 +71,52 @@
   </ul>
 </details>
 
+<!-- practice -->
+## :dart: practices
+
+* [x] Adding "Fire TV Sample" title
+* [x] Adding custom Image on Top view
+* [x] collapse and expand Appbar Tilte when scrolling in Home
+* [x] Manage Visibility of AppBar in Fragments (Invisible in Splash Screen)
+* [x] Adding Set On Click fo items
+* [x] implementing a Recycler View ( You can check the log by tag 'home_recycler' to recognize on bind and recyceling)
+* [x] Adding Persian Font in whole Project 
+* [x] Hide Side Menu
+* [x] customize Row categories
+* [x] do each tasks on a separate git commit 
+
+
+
 <!-- todos -->
 ### :compass: ToDo Roadmap
 
-for more information we can pass through below methods to have better app 
-I ignore them cuz of time and (Negative Score)
 
 - Offline First
   + using Room or other ORM to have caching system which can pereformed offline first Data from Repository
+  
+- Modular Programming
+  + refactoring codes and use Modular Programming to handle in larg scal 
+  + and also impelemt difrent UI and senario for both TV and Moblie app
+   
+- Migrate to MVI Artitecture
+  + migrate from MVVM artitecture to MVI to solve uni directnal data flow and have more sutable for testing
   
 - Write More Unit Test
   + just implement some few unit test to show but it is more adviced to wrte more Unit test
   
 - Write Some Mid Test and UI Test
- + you can write some integration Tests and Ui Tests to reliable whole system
- 
+  + you can write some integration Tests and Ui Tests to reliable whole system
+  
+- Adding Jetpac Compose
+  + using jetpac Compose to have better and fluent data change fo mobile app instead of XML
+   
 
 <!-- Acknowledgments -->
 ## :gem: Preview
 
 you can find the output apk file in below url :
 
- - [AparatTv.apk](https://shields.io/)
+ - [AparatTv.apk](https://github.com/MOSTAFA-IMANI/aparat-tv-sampel/blob/master/sample/apks/app-debug-sample.apk)
 
 
 <!-- Contributing -->
