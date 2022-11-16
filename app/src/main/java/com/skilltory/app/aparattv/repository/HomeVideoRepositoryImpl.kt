@@ -12,4 +12,8 @@ class HomeVideoRepositoryImpl(
     override suspend fun getAparatVideoCategorized(): HomeUiModel {
        return mapper.mapToDomainModel(aparatApi.getVideos())
     }
+
+    override suspend fun getDara() {
+        TODO("Not yet implemented")
+    }
 }

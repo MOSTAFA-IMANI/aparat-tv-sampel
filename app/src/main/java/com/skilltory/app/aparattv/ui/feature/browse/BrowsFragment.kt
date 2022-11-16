@@ -80,7 +80,6 @@ class BrowsFragment : BrowseSupportFragment(), UICommunicationTasks {
         super.onCreate(savedInstanceState)
         headersState = HEADERS_DISABLED;
         title = getString(R.string.brows_title)
-
     }
 
 

@@ -13,8 +13,8 @@ internal class StringExtensionKtTest {
     fun `toUniqueId must return valid result`() {
         val inputLowerCase = "12a28"
         val inputUpperCase = "12B28"
-        assertEquals(12128,inputLowerCase.toUniqueId())
-        assertEquals(12228,inputUpperCase.toUniqueId())
+        assertEquals(12128L,inputLowerCase.toUniqueId())
+        assertEquals(12228L,inputUpperCase.toUniqueId())
     }
     @Test
     fun `toUniqueId must return null for not valid input`() {
