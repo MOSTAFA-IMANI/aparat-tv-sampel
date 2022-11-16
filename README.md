@@ -28,7 +28,7 @@
 ### :camera: Screenshots
 
 <div align="center"> 
-  <img src="screen_shot.png" alt="screenshot" />
+  <img src="sample/screenshots/screendhot2.PNG" alt="screenshot" />
 </div>
 
 
@@ -84,6 +84,10 @@
 * [x] Hide Side Menu
 * [x] customize Row categories
 * [x] do each tasks on a separate git commit 
+* [x] Refactore Extending 'BrowsFragment' of BrowssSpportFragment instead of RowsSupportFragmnet 
+* [x] add custom layout named 'browse_title_custom_header_layout.xml' for brows header 
+* [x] chnage appbar visibility and mange it 
+
 
 
 
